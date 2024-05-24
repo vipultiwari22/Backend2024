@@ -285,7 +285,7 @@ const updateUserCoverImage = asyncHandler(async (req, res, next) => {
     }
 
     const user = await User.findById(req.user?._id)
-    
+
     if (user.coverImage) {
         await deleteFromCloudinary(user.coverImage)
     }
